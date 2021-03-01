@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -34,11 +35,47 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    //kt
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kt"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kt"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$ktCoroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$ktCoroutines"
+
+    //android
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.activity:activity-ktx:1.2.0'
+    implementation 'androidx.fragment:fragment-ktx:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //architecture components
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
+    implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
+
+    //dagger (dependency injection library)
+    implementation "com.google.dagger:dagger-android:$dagger"
+    implementation "com.google.dagger:dagger-android-support:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+
+    //network
+    implementation "com.google.code.gson:gson:$gson"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    //debug utils
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-beta-3'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //ui
+    implementation "com.github.bumptech.glide:glide:$glide"
+    kapt "com.github.bumptech.glide:compiler:$glide"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
