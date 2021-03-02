@@ -1,8 +1,7 @@
 package com.example.testtask0.di
 
 import com.example.testtask0.App
-import com.example.testtask0.di.module.AppModule
-import com.example.testtask0.di.module.LoggingModule
+import com.example.testtask0.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -13,7 +12,10 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AppModule::class,
-        LoggingModule::class
+        ViewModelModule::class,
+        FragmentModule::class,
+        LoggingModule::class,
+        NetworkModule::class
     ]
 )
 @Singleton

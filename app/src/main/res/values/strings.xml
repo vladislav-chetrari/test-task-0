@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Test Task 0</string>
+    <string name="app_name">Test Task 4 Alar</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="authenticate">Sign In</string>
+    <string name="greetings">Welcome!</string>
+    <string name="progress">Please wait…</string>
+    <string name="error_wrong_credentials">Wrong Credentials!</string>
+    <string name="page_label_auth">Authentication</string>
+    <string name="error_field_required">Field required</string>
+    <string name="error_unknown">Unknown error</string>
 </resources>
