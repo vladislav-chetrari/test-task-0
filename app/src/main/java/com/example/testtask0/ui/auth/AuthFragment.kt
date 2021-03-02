@@ -2,9 +2,10 @@ package com.example.testtask0.ui.auth
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.navigation.fragment.findNavController
 import com.example.testtask0.R
+import com.example.testtask0.ui.auth.AuthFragmentDirections.Companion.actionAuthFragmentToLocationsFragment
 import com.example.testtask0.ui.base.BaseFragment
 import com.example.testtask0.ui.extension.onTextChange
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -47,7 +48,7 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
             onProgress = ::showProgress,
             onComplete = { progressSnackbar.dismiss() },
             onError = ::showError,
-            onSuccess = { Toast.makeText(requireContext(), "HOORAY!!!", Toast.LENGTH_SHORT).show() }
+            onSuccess = { proceed() }
         )
     }
 
@@ -55,12 +56,16 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
         override fun onHidden(extendedFab: ExtendedFloatingActionButton?) = progressSnackbar.show()
     })
 
-    private fun showError(it: Throwable) = errorSnackbar.run {
-        setText(it.message ?: getString(R.string.error_unknown))
+    private fun showError(error: Throwable) = errorSnackbar.run {
+        setText(error.message ?: getString(R.string.error_unknown))
         setAction(android.R.string.ok) {
             dismiss()
             authButton.show()
         }
         show()
+    }
+
+    private fun proceed() {
+        findNavController().navigate(actionAuthFragmentToLocationsFragment())
     }
 }

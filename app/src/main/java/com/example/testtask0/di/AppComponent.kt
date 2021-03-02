@@ -15,7 +15,8 @@ import javax.inject.Singleton
         ViewModelModule::class,
         FragmentModule::class,
         LoggingModule::class,
-        NetworkModule::class
+        NetworkModule::class,
+        PersistenceModule::class
     ]
 )
 @Singleton

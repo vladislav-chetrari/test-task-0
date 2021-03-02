@@ -4,6 +4,7 @@ import android.content.res.Resources
 import com.example.testtask0.BuildConfig
 import com.example.testtask0.R
 import com.example.testtask0.data.network.api.Api
+import com.example.testtask0.data.network.api.interceptor.AuthTokenInterceptor
 import com.example.testtask0.di.BaseUrl
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -25,12 +26,15 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun okHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
-        OkHttpClient.Builder()
-            .readTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
-            .connectTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
-            .apply { if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor) }
-            .build()
+    fun okHttpClient(
+        authTokenInterceptor: AuthTokenInterceptor,
+        loggingInterceptor: HttpLoggingInterceptor
+    ): OkHttpClient = OkHttpClient.Builder()
+        .readTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
+        .connectTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
+        .addInterceptor(authTokenInterceptor)
+        .apply { if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor) }
+        .build()
 
     @Provides
     @Singleton

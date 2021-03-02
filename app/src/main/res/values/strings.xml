@@ -9,4 +9,6 @@
     <string name="page_label_auth">Authentication</string>
     <string name="error_field_required">Field required</string>
     <string name="error_unknown">Unknown error</string>
+    <string name="page_label_locations">Locations</string>
+    <string name="retry">Retry</string>
 </resources>
