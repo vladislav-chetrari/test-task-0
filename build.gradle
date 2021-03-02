@@ -11,6 +11,7 @@ buildscript {
         gson = '2.8.6'
         glide = '4.9.0'
         crashlytics = '2.2.0'
+        navigation = "2.3.3"
     }
     repositories {
         google()
