@@ -2,6 +2,7 @@ package com.example.testtask0.di.module
 
 import com.example.testtask0.di.FragmentScoped
 import com.example.testtask0.ui.auth.AuthFragment
+import com.example.testtask0.ui.location.LocationDetailsFragment
 import com.example.testtask0.ui.locations.LocationsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -16,4 +17,8 @@ abstract class FragmentModule {
     @FragmentScoped
     @ContributesAndroidInjector
     abstract fun locationsFragment(): LocationsFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    abstract fun locationDetailsFragment(): LocationDetailsFragment
 }

@@ -21,5 +21,18 @@
         android:id="@+id/locationsFragment"
         android:name="com.example.testtask0.ui.locations.LocationsFragment"
         android:label="@string/page_label_locations"
-        tools:layout="@layout/fragment_locations" />
+        tools:layout="@layout/fragment_locations">
+        <action
+            android:id="@+id/action_locationsFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.testtask0.ui.location.LocationDetailsFragment"
+        android:label="@string/page_label_location_details"
+        tools:layout="@layout/fragment_location_details">
+        <argument
+            android:name="location"
+            app:argType="com.example.testtask0.ui.model.Location" />
+    </fragment>
 </navigation>

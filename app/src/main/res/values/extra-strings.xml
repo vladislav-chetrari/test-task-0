@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="base_url">http://www.alarstudios.com/test/</string>
+    <string name="google_maps_api_key">AIzaSyCOx7Rd-iGYUODnAOLmJo27NwbkiU8e65Y</string>
 </resources>

@@ -11,4 +11,8 @@
     <string name="error_unknown">Unknown error</string>
     <string name="page_label_locations">Locations</string>
     <string name="retry">Retry</string>
+    <string name="label_id">Id</string>
+    <string name="label_country">Country</string>
+    <string name="label_name">Name</string>
+    <string name="page_label_location_details">Location Details</string>
 </resources>
